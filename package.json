@@ -1,0 +1,10 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsc -w ./src/index.ts"
+  },
+  "author": "Jakub Niewelt",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,29 +1,20 @@
-function averageWaitingTime(customers) {
-    var prepTime = [];
-    var chefFreeAt = 0;
-    var additionalWaitTime;
-    for (var i = 0; i < customers.length; i++) {
-        additionalWaitTime = 0;
-        if (chefFreeAt <= customers[i][0]) {
-            chefFreeAt = customers[i][0] + customers[i][1];
+function minOperations(logs) {
+    var dirLevel = 0;
+    for (var _i = 0, logs_1 = logs; _i < logs_1.length; _i++) {
+        var log = logs_1[_i];
+        switch (log) {
+            case "../":
+                if (dirLevel > 0)
+                    dirLevel--;
+                break;
+            case "./":
+                break;
+            default:
+                dirLevel++;
         }
-        else {
-            additionalWaitTime = chefFreeAt - customers[i][0];
-            chefFreeAt += customers[i][1];
-        }
-        prepTime.push(customers[i][1] + additionalWaitTime);
     }
-    return (prepTime.reduce(function (totalTime, waitTime) { return waitTime + totalTime; }, 0) /
-        customers.length);
+    return dirLevel;
 }
-console.log(averageWaitingTime([
-    [1, 2],
-    [2, 5],
-    [4, 3],
-])); // 5
-console.log(averageWaitingTime([
-    [5, 2],
-    [5, 4],
-    [10, 3],
-    [20, 1],
-])); // 3.25
+console.log(minOperations(["d1/", "d2/", "../", "d21/", "./"])); // 2
+console.log(minOperations(["d1/", "d2/", "./", "d3/", "../", "d31/"])); // 3
+console.log(minOperations(["d1/", "../", "../", "../"])); // 0

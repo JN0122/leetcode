@@ -2,7 +2,7 @@
   "name": "leetcode",
   "version": "1.0.0",
   "scripts": {
-    "dev": "tsc -w ./src/index.ts"
+    "dev": "tsc -w"
   },
   "author": "Jakub Niewelt",
   "license": "ISC",

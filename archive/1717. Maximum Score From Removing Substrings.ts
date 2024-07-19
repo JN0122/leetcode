@@ -65,3 +65,5 @@ function removeRegexFromText(
 
 console.log(maximumGain("cdbcbbaaabab", 4, 5)); // 19
 console.log(maximumGain("aabbaaxybbaabb", 5, 4)); // 20
+
+// In this problem stack should be used. We iterate throught all the chars in string and we add them to the stack. When we encouter etc. stack:['x', 'a'], new char: 'b', pattern: "ab" we remove last item from stack.
